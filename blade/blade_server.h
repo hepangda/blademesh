@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include "blade/session_policy.h"
 #include "blmesh/common.h"
 
 namespace blmesh {

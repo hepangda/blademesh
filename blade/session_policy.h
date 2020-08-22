@@ -2,12 +2,12 @@
 //
 //  This source code is licensed under the MIT license found in the
 //  LICENSE file in the root directory of this source tree.
-  
+
 #pragma once
 
 #include "blmesh/common.h"
 
-namespace bf {
+namespace blmesh {
 
 class BladeObject;
 class BladeSession;
@@ -20,7 +20,6 @@ class SessionPolicy {
   virtual void OnWrote(Rc<BladeSession> self) {}
   virtual void OnChildDie(Rc<BladeSession> self, Rc<BladeSession> child) {}
 
-
   virtual void OnErrorWhenConnect(Rc<BladeSession> self, const nets::ErrorCode &ec) {}
   virtual void OnErrorWhenWriting(Rc<BladeSession> self, const nets::ErrorCode &ec, size_t bytes) {}
 
@@ -31,4 +30,4 @@ class SessionPolicy {
   virtual Ptr<SessionPolicy> Clone() = 0;
 };
 
-}
+}  // namespace blmesh

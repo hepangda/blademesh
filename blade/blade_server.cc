@@ -5,7 +5,7 @@
 
 #include "blade_server.h"
 
-#include "blade/session_policy.h"
+#include "blade/blade_session.h"
 
 namespace blmesh {
 

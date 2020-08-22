@@ -464,7 +464,7 @@ int BladeObject::Dsl(const std::string &str) {
 }
 
 void BladeObject::UpdateHeaderField() const {
-  int payload_length = Iterate([](const BladeName &name, FieldType type, void *field) {
+  int payload_length = Iterate([](const BladeName &name, FieldType type, void *field) -> int {
     auto base = 2 * sizeof(FieldType) + sizeof(u32) + name.length();
     switch (type) {
       case FieldType::Byte:
@@ -480,6 +480,7 @@ void BladeObject::UpdateHeaderField() const {
       default:
         throw UnreachableCode{};
     }
+    return 0;
   });
 
   header_.payload_length = payload_length + sizeof(u32) + service_name_.length();

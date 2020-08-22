@@ -2,6 +2,7 @@
 //
 //  This source code is licensed under the MIT license found in the
 //  LICENSE file in the root directory of this source tree.
+
 #pragma once
 
 #include <functional>
@@ -104,16 +105,14 @@ class BladeObject {
   size_t GetEncodedSize() const;
   
   Ptr<BladeObject> Clone() const;
- protected:
+  
+  void SetRawHeader(RawBladeHeader header);
+
   void SetPayloadLength(u32 payload_length);
 
   void SetContentOffset(u32 content_offset);
 
-  void SetRawHeader(RawBladeHeader header);
-
   friend class BladeHeaderEncoder;
-  friend class Opr;
-
  private:
   mutable RawBladeHeader header_;
   BladeString service_name_;
