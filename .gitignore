@@ -30,3 +30,16 @@
 *.exe
 *.out
 *.app
+
+# IDE Environment
+.vscode/**
+
+# Bazel Tempfiles
+bazel-bin
+bazel-out
+bazel-testlogs
+bazel-blademesh
+bazel-bin/**
+bazel-out/**
+bazel-blademesh/**
+bazel-testlogs/**
