@@ -1,0 +1,38 @@
+cc_binary(
+  name = "atreus",
+  srcs = [
+    "atreus.cc",
+    "core/kartos.cc",
+    "core/kartos.h",
+    "core/loki.cc",
+    "core/loki.h",
+    "core/watchdog.cc",
+    "core/watchdog.h",
+    "policy/kartos_session_policy.cc",
+    "policy/kartos_session_policy.h",
+    "policy/loki_session_policy.cc",
+    "policy/loki_session_policy.h",
+    "util/config_provider.cc",
+    "util/config_provider.h",
+    "util/data_manager.cc",
+    "util/data_manager.h",
+    "util/service_manager.cc",
+    "util/service_manager.h",
+  ],
+  copts = [
+    "-std=c++17",
+    "-lglog",
+    "-lpthread",
+    "-lgflags",
+  ],
+  linkopts = [
+    "-lglog",
+    "-pthread",
+    "-lgflags",
+  ],
+  deps = [
+    "//blade:framework",
+    "//blmesh:noncopyable",
+    "//blmesh:rw_lock",
+  ],
+)

@@ -1,4 +1,3 @@
-
 cc_library(
   name = "common",
   srcs = [
@@ -39,6 +38,44 @@ cc_library(
   deps = [
     ":common",
   ],
+  visibility = [
+    "//visibility:public",
+  ],
+)
+
+cc_library(
+  name = "rw_lock",
+  srcs = [],
+  hdrs = [
+    "rw_lock.h"
+  ],
+  includes = [
+    "."
+  ],
+  copts = [
+    "-std=c++17",
+  ],
+  deps = [
+    ":noncopyable"
+  ],
+  visibility = [
+    "//visibility:public",
+  ],
+)
+
+cc_library(
+  name = "noncopyable",
+  srcs = [],
+  hdrs = [
+    "noncopyable.h"
+  ],
+  includes = [
+    "."
+  ],
+  copts = [
+    "-std=c++17",
+  ],
+  deps = [],
   visibility = [
     "//visibility:public",
   ],
