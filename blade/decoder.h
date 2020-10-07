@@ -75,7 +75,7 @@ class Decoder {
     cur_ += length;
   }
 
-  byte *origin_;
+  byte *origin_{nullptr};
   byte *cur_;
   int raw_length_;
   int remain_length_;
